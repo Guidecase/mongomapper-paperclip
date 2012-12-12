@@ -37,24 +37,24 @@ end
 module MongoMapper
   module Plugins
     module EmbeddedCallbacks
-      module InstanceMethods
-        def run_callbacks(callback, opts = nil, &block)
-          embedded_docs = []
 
-          embedded_associations.each do |association|
-            embedded_docs += Array(get_proxy(association).send(:load_target))
-          end
+      def run_callbacks(callback, opts = nil, &block)
+        embedded_docs = []
 
-          block = embedded_docs.inject(block) do |chain, doc|
-            if doc.class.respond_to?("_#{callback}_callbacks")
-              lambda { doc.run_callbacks(callback, &chain) }
-            else
-              chain
-            end
-          end
-          super callback, &block
+        embedded_associations.each do |association|
+          embedded_docs += Array(get_proxy(association).send(:load_target))
         end
+
+        block = embedded_docs.inject(block) do |chain, doc|
+          if doc.class.respond_to?("_#{callback}_callbacks")
+            lambda { doc.run_callbacks(callback, &chain) }
+          else
+            chain
+          end
+        end
+        super callback, &block
       end
+
     end
   end
 end

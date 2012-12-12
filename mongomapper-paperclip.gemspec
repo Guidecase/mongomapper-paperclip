@@ -2,9 +2,9 @@
 require File.expand_path('../lib/mongomapper-paperclip/version', __FILE__)
 
 Gem::Specification.new do |gem|
-  gem.authors       = ["Sylvain Niles"]
-  gem.email         = ["sylvain.niles@gmail.com"]
-  gem.description   = %q{Makes paperclip work with mongomapper}
+  gem.authors       = ["Sylvain Niles", "Travis Dunn"]
+  gem.email         = ["travis@earlydoc.com"]
+  gem.description   = %q{Makes paperclip work with mongomapper 0.12.x}
   gem.summary       = %q{fixes all the things!}
   gem.homepage      = "https://github.com/sylvainsf/mongomapper-paperclip/"
 
