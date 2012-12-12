@@ -31,3 +31,13 @@ Then use paperclip as usual.
 3. Commit your changes (`git commit -am 'Added some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## EDIT: 
+
+Forked and updated to fix the following issue:
+
+    DEPRECATION WARNING: The InstanceMethods module inside ActiveSupport::Concern will be no longer included automatically. Please define instance methods directly in MongoMapper::Plugins::EmbeddedCallbacks instead.
+
+Originally patched for Earlydoc health management apps: 
+
+http://www.earlydoc.com
