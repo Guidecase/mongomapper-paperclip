@@ -20,7 +20,7 @@ Or install it yourself as:
 
 In any model you want to use paperclip simply:
 
-    class User < ActiveRecord::Base
+    class User
       include MMPaperclip
 
       has_mm_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
